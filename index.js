@@ -81,7 +81,7 @@ async function addState(data){
 app.get("/", async (req, res) => {
   try {
     const visitedStates = await getStates();
-    res.render('index',  { visitedStates: visitedStates });
+    res.render('index',  { visitedStates: JSON.stringify(visitedStates) });
   } catch (error) {
     console.error('Error fetching row count:', error);
     res.status(500).send('Internal Server Error');

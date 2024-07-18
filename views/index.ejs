@@ -27,16 +27,15 @@
 
          <h2 class="name">Selected Name: <span>Delhi</span></h2>
          <h2>Visited States: </h2>
-         <% if (visitedStates.length > 0) { %>
-            <ul id="States">
-               <% for (let i = 0; i < visitedStates.length; i++) { %>
-                 <li><%= visitedStates[i].name %></li>
-               <% } %>
+         <% let __visitedStates = JSON.parse(visitedStates) %>
+         <% if (__visitedStates.length >1){ %>
+            <ul>
+               <% __visitedStates.forEach(state => { %>
+                  <li> <%= state.name %> </li>
+               <% }); %>
             </ul>
-         <% } else { %>
-           <h3>0</h3>
-         <% } %>
-         <h2 class="total-count">TotalVisited States: <%= visitedStates.length %></h2>
+         <% } else{ 0 } %>
+         <h2 class="total-count">TotalVisited States: <%= __visitedStates.length %></h2>
 
       </section>
 
@@ -192,18 +191,16 @@
 
    </div>
 
+   
+
   <script src="./js/script.js"></script>
 
   <script>
+   let visited = JSON.parse('<%- visitedStates %>');
    
-   let id;
-
-   <% visitedStates.forEach(state => { %>
-      id = '<%= state.state_code %>';
-      $(`#${id}`).css({fill:'teal'});
-
-   <% }); %>
-
+   visited.forEach(state => {
+      $(`#${state.state_code}`).css({fill:'teal'});
+   });
 
   </script>
 
