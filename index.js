@@ -48,8 +48,8 @@ async function addState(data){
   let code = data.stateCode;
   let name = data.stateName;
 
-  let found = visited_states.findIndex(state => state.state_code == 'code');
-  if(found){
+  let found = visited_states.findIndex(state => state.state_code === code);
+  if(found !== -1){
     console.log("already exist");
     return;
   }
