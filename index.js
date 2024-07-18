@@ -53,13 +53,17 @@ async function addState(data){
     return
   }
   
+
   let newState = {
     id: visited_states.length + 1, // Assign a new id based on the maximum id in the array
     state_code: code,
     name: name,
   };
+  console.log("new data --> ",newState);
 
   visited_states.push(newState);
+  console.log(visited_states);
+
 
   // const db = new pg.Client(database);
   // db.connect();
