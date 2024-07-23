@@ -5,6 +5,7 @@ html {
 html,
 body {
   height: 100%;
+  
 }
 
 body {
@@ -15,13 +16,40 @@ body {
   min-width: 100%;
 }
 
+
+
+
+body::-webkit-scrollbar {
+  width: 8px; 
+  height: 8px;
+}
+
+
+body::-webkit-scrollbar-thumb {
+  background-color: teal; 
+  border-radius: 6px; 
+}
+
+body::-webkit-scrollbar-track {
+  background: #ffffff; 
+  border-radius: 6px; 
+}
+
+body::-webkit-scrollbar-corner {
+  background: #f1f1f1;
+}
+
+
 .title{
   background-color: #383d46;
   border-radius: 0 0 2rem 2rem;
   padding: 1rem;
-  width: 100%;
   text-align: center;
   margin-bottom: 1rem;
+  border-style: solid; 
+  border-color: white; 
+  border-width: 0 2px 2px 2px; 
+
 }
 
 .title h1{
@@ -66,6 +94,7 @@ button {
 }
 
 .main{
+  padding: 2rem;
       display: grid;
       gap:2rem;
       grid-template-rows: max-content 1fr;
@@ -76,6 +105,9 @@ button {
   border-radius: 0 0 4rem 4rem ;
   padding: 2rem;
   position: relative;
+  border-style: solid; 
+  border-color: white; 
+  border-width: 2px; 
 }
 
 form{
@@ -89,7 +121,7 @@ form input{
   background-color: white;
   padding: 1rem;
   font-size: large;
-  border-radius: 0 1.5rem 0 0;
+  /* border-radius: 0 1.5rem 0 0; */
 }
 
 form input[name='stateName']{
@@ -108,5 +140,9 @@ form input[name='stateName']{
   }
   .content{
     border-radius: 0 4rem 4rem 0;
+    /* border-width: 2px 2px 2px 0; */
+  }
+  form input{
+    border-radius: 0 1.5rem 0 0;
   }
 }
